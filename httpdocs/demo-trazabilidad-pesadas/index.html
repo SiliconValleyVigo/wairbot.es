@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Trazabilidad Pesadas</title>
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="qrious.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .panelContainer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        .formContainer {
+            width: 30%;
+        }
+
+        .panel {
+            width: 50%;
+        }
+
+        @media (max-width: 800px) {
+            .panelContainer {
+                flex-direction: column;
+            }
+
+            .formContainer {
+                width: 100%;
+            }
+
+            .panel {
+                width: 100%;
+            }
+        }
+    </style>
+    <section class="panelContainer">
+        <div class="formContainer">
+            <!--barco_2 - puerto_3 - producto_4 - peso_5-->
+            <div class="formGroup">
+                <label>Barco</label>
+                <input type="text" id="barco_2" value="Karaboudjan" />
+            </div>
+            <div class="formGroup">
+                <label>Puerto</label>
+                <input type="text" id="puerto_3" value="Vigo" />
+            </div>
+            <div class="formGroup">
+                <label>Producto</label>
+                <input type="text" id="producto_4" value="Bacalao" />
+            </div>
+            <div class="formGroup">
+                <label>Peso</label>
+                <input type="text" id="peso_5" value="10" />
+            </div>
+            <div class="formGroup">
+                <button onclick="generarQR()">Generar QR</button>
+            </div>
+            <div class="formGroup">
+                <button onclick="limpiar()">Limpiar</button>
+            </div>
+        </div>
+        <style>
+            .panel h2 {
+                text-align: center;
+            }
+
+            .situacion {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .imagenesSituacion {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .imagenesSituacion img {
+                width: 350px;
+                height: auto;
+                margin: 10px;
+            }
+
+            .imagenesSituacion a {
+                text-decoration: none;
+                color: #000;
+                font-size: 1.5em;
+            }
+
+            @media (max-width: 800px) {
+                .imagenesSituacion img {
+                    width: 170px;
+                    height: auto;
+                    margin: 5px;
+                }
+
+                .imagenesSituacion a {
+                    font-size: 1em;
+                }
+            }
+
+            .estadosContainer {
+                width: calc(100% - 40px);
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                background-color: white;
+                border: 1px solid #a1a1a1;
+                border-radius: 5px;
+                font-size: 1.2em;
+            }
+
+            .estado {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                margin: 10px;
+                background-color: rgb(255, 239, 193);
+            }
+
+            .porcentaje {
+                width: 100%;
+                height: 190px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                position: relative;
+            }
+
+            .datosEstado {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .barcoPorcentaje {
+                width: 300px;
+            }
+
+            .barcoVerde {
+                width: 70%;
+                height: 100%;
+                background-image: url('imgs/barcoVerde.png');
+                background-size: 300px auto;
+                background-repeat: no-repeat;
+                background-position: 0 20px;
+                position: absolute;
+                left: 0;
+            }
+
+            .barcoRojo {
+                width: 30%;
+                height: 100%;
+                background-image: url('imgs/barcoRojo.png');
+                background-size: 300px auto;
+                background-repeat: no-repeat;
+                background-position: 100% 20px;
+                position: absolute;
+                right: 0;
+            }
+
+            .contenedorPorcentaje {
+                width: 300px;
+            }
+
+            .contenedorVerde {
+                width: 70%;
+                height: 100%;
+                background-image: url('imgs/contenedorVerde.png');
+                background-size: 300px auto;
+                background-repeat: no-repeat;
+                background-position: 0 45px;
+                position: absolute;
+                left: 0;
+            }
+
+            .contenedorRojo {
+                width: 30%;
+                height: 100%;
+                background-image: url('imgs/contenedorRojo.png');
+                background-size: 300px auto;
+                background-repeat: no-repeat;
+                background-position: 100% 45px;
+                position: absolute;
+                right: 0;
+            }
+
+            .dato {
+                margin: 10px;
+            }
+
+            .dato span {
+                font-weight: bold;
+            }
+
+            @media screen and (max-width: 800px) {
+                .estado {
+                    width: 100%;
+                }
+
+                .estadosContainer {
+                    flex-direction: column;
+                }
+
+                .datosEstado {
+                    width: 100%;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                .dato {
+                    margin: 5px;
+                    width: 50%;
+                }
+            }
+        </style>
+        <div class="panel">
+            <h2>Estado de descarga</h2>
+            <div class="estadosContainer">
+                <div class="estado estadoBarco">
+                    <div class="porcentaje barcoPorcentaje">
+                        <div class="barcoVerde"></div>
+                        <div class="barcoRojo"></div>
+                    </div>
+                    <div class="datosEstado barcoDatos">
+                        <div class="dato bultos">Bultos: <span id="bultos">100</span> Und.</div>
+                        <div class="dato peso">Peso: <span id="peso">1000</span> Kg.</div>
+                    </div>
+                </div>
+                <div class="estado estadoContenedor">
+                    <div class="porcentaje contenedorPorcentaje">
+                        <div class="contenedorVerde"></div>
+                        <div class="contenedorRojo"></div>
+                    </div>
+                    <div class="datosEstado contenedorDatos">
+                        <div class="dato bultos">Bultos: <span id="bultos">100</span> Und.</div>
+                        <div class="dato peso">Peso: <span id="peso">1000</span> Kg.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="situacion">
+                <div class="imagenesSituacion">
+                    <img src="imgs/puerto.png" alt="Puerto" />
+                    <img src="imgs/mapa.png" alt="Mapa" />
+                </div>
+                <a href="https://www.google.es/maps/place//@42.2333925,-8.7397029,16z?entry=ttu" target="_blank"
+                    rel="noopener noreferrer">
+                    Lonxa de Altura de Vigo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gridContainer" id="gridContainer" style="display: flex;">
+        <div class="grid" id="grid">
+        </div>
+    </section>
+
+    <script>
+        //la api es el archivo api.php que se encuentra en la misma carpeta que este archivo index.html
+        const _URL = 'api.php';
+        let pesadas_tbasculas_guardadas = [];
+
+        async function generarQR() {
+            let grid = document.getElementById('grid');
+            console.log(grid); //1º grid
+
+            // Crear un código único de 8 caracteres con letras mayúsculas y números
+            let codigo = Math.random().toString(36).substring(2, 10).toUpperCase();
+
+            // URL de WhatsApp para enviar por texto el código
+            let url = `https://wa.me/34886080860?text=${codigo}`;
+
+            // Generar el QR code como una cadena SVG
+            let qr = new QRious({
+                value: url,
+                size: 200
+            });
+
+            // Convertir el SVG a una imagen PNG base64
+            let qrImageBase64 = qr.toDataURL();
+
+            // Función para convertir base64 a Blob
+            function base64ToBlob(base64, contentType) {
+                const byteCharacters = atob(base64.split(',')[1]);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                return new Blob([byteArray], { type: contentType });
+            }
+
+            // Crear un objeto Blob con el QR en formato PNG
+            let qrBlob = base64ToBlob(qrImageBase64, 'image/png');
+
+            // Crear un objeto URL para el Blob
+            let qrBlobURL = URL.createObjectURL(qrBlob);
+
+            // Crear un elemento de imagen para mostrar el QR
+            let qrImage = document.createElement('img');
+            qrImage.src = qrBlobURL;
+
+            // Mostrar el QR en el grid
+            let gridElement = `
+                <div class="gridElement" id="gridElement_${codigo}">
+                    ${qrImage.outerHTML}
+                    <a href="${url}" target="_blank" style="margin-top:20px">${codigo}</a>
+                </div>
+            `;
+            // Añadirlo a la grid en el primer lugar
+            grid.innerHTML = gridElement + grid.innerHTML;
+
+            console.log(grid); //3º grid
+
+            let barco = document.getElementById('barco_2').value;
+            let puerto = document.getElementById('puerto_3').value;
+            let producto = document.getElementById('producto_4').value;
+            let peso = document.getElementById('peso_5').value;
+
+            let datos = {
+                funcion_admin: 'create',
+                codigo_1: codigo,
+                barco_2: barco,
+                puerto_3: puerto,
+                producto_4: producto,
+                peso_5: peso
+            };
+
+            fetch(_URL, {
+                method: 'POST',
+                body: JSON.stringify(datos)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        console.log(data.error);
+                        //imprimir la respuesta completa
+                        console.log(data);
+                    } else {
+                        if (data.status === 'success') {
+                            let mensajeOk = data.message;
+                            console.log(mensajeOk);
+                        }
+
+                        if (data.status === 'error') {
+                            let mensajeError = data.message;
+                            console.log(mensajeError);
+                        }
+                    }
+                });
+        }
+
+        async function limpiar() {
+            //quitar los elementos de la grid
+            document.getElementById('grid').innerHTML = '';
+
+            let datos = {
+                funcion_admin: 'borrarTodo'
+            };
+
+            fetch(_URL, {
+                method: 'POST',
+                body: JSON.stringify(datos)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        console.log(data.error);
+                        //imprimir la respuesta completa
+                        console.log(data);
+                    } else {
+                        if (data.status === 'success') {
+                            let mensajeOk = data.message;
+
+                            //limpiar el array de pesadas_tbasculas_guardadas
+                            pesadas_tbasculas_guardadas = [];
+                        }
+
+                        if (data.status === 'error') {
+                            let mensajeError = data.message;
+                            console.log(mensajeError);
+                        }
+                    }
+                });
+        }
+
+        //cada segundo obtener getPesadasDescargadasAndPesadasSinDescargar de la api
+        setInterval(() => {
+            let datos = {
+                funcion_admin: 'getPesadasDescargadasAndPesadasSinDescargar'
+            };
+
+            fetch(_URL, {
+                method: 'POST',
+                body: JSON.stringify(datos)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        console.log(data.error);
+                        //imprimir la respuesta completa
+                        console.log(data);
+                    } else {
+
+                        let descargadas = data.descargadas;
+                        let sin_descargar = data.sin_descargar;
+
+                        //las descargas se muestran en contenedor y sin_descargar se muestran en barco
+                        let barco = document.querySelector('.estadoBarco');
+                        let contenedor = document.querySelector('.estadoContenedor');
+
+                        //actualizar los datos de las descargas
+                        barco.querySelector('.bultos span').innerText = sin_descargar.num_pesadas;
+                        barco.querySelector('.peso span').innerText = sin_descargar.peso_total;
+
+                        //actualizar los datos de las sin_descargar
+                        contenedor.querySelector('.bultos span').innerText = descargadas.num_pesadas;
+                        contenedor.querySelector('.peso span').innerText = descargadas.peso_total;
+
+                        //actualizar los porcentajes en el width de los divs del barco verde y rojo
+                        barco.querySelector('.barcoVerde').style.width = `${sin_descargar.porcentaje}%`;
+                        barco.querySelector('.barcoRojo').style.width = `${100 - sin_descargar.porcentaje}%`;
+
+                        //actualizar los porcentajes en el width de los divs del contenedor verde y rojo
+                        contenedor.querySelector('.contenedorVerde').style.width = `${descargadas.porcentaje}%`;
+                        contenedor.querySelector('.contenedorRojo').style.width = `${100 - descargadas.porcentaje}%`;
+                    }
+                });
+        }, 500);
+
+
+        setInterval(() => {
+            let datos = {
+                funcion_admin: 'getDataBaseBascula'
+            };
+
+            fetch(_URL, {
+                method: 'POST',
+                body: JSON.stringify(datos)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data.error) {
+                        console.log(data.error);
+                        //imprimir la respuesta completa
+                        console.log(data);
+                    } else {
+                        let pesadas_tbasculas_descargadas = data.pesadas;
+
+                        //obtener los ids de las pesadas que no estan en pesadas_tbasculas_guardadas
+                        for (let pesada of pesadas_tbasculas_descargadas) {
+                            let id_descargada = pesada.id;
+
+                            // Verificar si la pesada ya está en pesadas_tbasculas_guardadas
+                            let pesadaExistente = pesadas_tbasculas_guardadas.some(p => p.id === id_descargada);
+
+                            if (!pesadaExistente) {
+                                pesadas_tbasculas_guardadas.push(pesada);
+
+                                //insertar el peso en el input de la pesada
+                                let input_peso = document.getElementById('peso_5');
+                                input_peso.value = pesada.peso_3;
+
+                                //generar el qr
+                                generarQR();
+                            }
+                        }
+                    }
+                });
+        }, 500);
+    </script>
+</body>
+
+</html>

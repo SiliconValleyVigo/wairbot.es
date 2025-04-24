@@ -1,0 +1,84 @@
+.login{
+    width: 100%;
+    height: calc(100dvh - 133px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+.login form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+h2{
+    color: #306ff8;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.inputGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.inputGroup label{
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.inputGroup select{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #306ff8;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.2rem;
+
+}
+
+.inputGroup input{
+    width: calc(100% - 8px);
+    height: 30px;
+    border: 1px solid #306ff8;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.login form button{
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: #306ff8;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/*hover*/
+.login form button:hover{
+    background-color: #1440a1;
+}
+
+.login form small{
+    margin-top: 10px;
+    font-size: 1rem;
+    color: red;
+}
+
+.cambioFormularioLoginRegistro{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #306ff8;
+    cursor: pointer;
+}

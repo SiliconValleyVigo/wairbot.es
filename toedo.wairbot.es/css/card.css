@@ -1,0 +1,206 @@
+.mainCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100% - 20px);
+    height: 100%;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.cardFoto {
+    width: 100px;
+    height: 90%;
+}
+
+.cardFoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 70%;
+    height: 90%;
+    padding: 10px;
+}
+
+.card_info_1 {
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--azul);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card_info_2,
+.card_info_3,
+.card_info_4,
+.card_info_5{
+    width: 100%;
+    font-size: 0.9em;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tiempos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 94%;
+    height: 100%;
+}
+
+.tiemposHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.tiemposHeaderTitle {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--azul);
+}
+
+.tiemposHeaderSelect select{
+    font-size: 1.3rem;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.tiemposCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.cardTiempos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.infoCardTiempos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 70%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.infoCardTiempos div {
+    margin-bottom: 10px;
+}
+
+.infoTiemposCardTiempos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 30%;
+    height: 100%;
+}
+
+
+.tiempoTotal{
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.relorParado {
+    border: 1px solid rgb(150, 150, 150);
+    color: rgb(150, 150, 150);    
+}
+
+.relorParado:hover{
+    border: 1px solid var(--azul);
+    color: var(--azul);     
+}
+
+.relojEncendido{
+    border: 1px solid var(--azul);
+    color: var(--azul);     
+}
+
+.notas{
+    font-style: italic;
+}
+
+.fecha{
+    font-style: italic;
+}
+
+@media screen and (max-width: 800px) {
+    .cardTiempos {
+        flex-direction: column;
+    }
+
+    .infoCardTiempos {
+        width: 100%;
+    }
+
+    .infoTiemposCardTiempos {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .tiempoTotal {
+        width: calc(100% - 45px);
+        text-align: center;
+    }
+
+}
+
+.tiemposHeaderButtons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tiemposHeaderButtons button {
+    margin: 5px;
+    padding: 25px;
+    font-size: 1.2em;
+    border: 2px solid var(--azul);
+    color: var(--azul);
+    border-radius: 5px;
+    background-color: white;
+}
+
+.tiemposHeaderButtons button:hover {
+    background-color: var(--azul);
+    color: white;
+    cursor: pointer;
+}

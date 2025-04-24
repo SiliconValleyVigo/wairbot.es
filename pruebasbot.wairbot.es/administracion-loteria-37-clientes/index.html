@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lOTERÍAS 37 CLIENTES</title>
+    <meta name="description" content="Aquí va la descripción de la página">
+    <link rel="icon" href="./imgs/favicon.png">
+
+    <link rel="stylesheet" href="./css/globals.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/inputs.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/modal.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+    <script src="./js/query.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/menus.js"></script>
+    <script src="./js/templates/card.js"></script>
+    <script src="./js/templates/form.js"></script>
+    <script src="./js/templates/grid.js"></script>
+    <script src="./js/templates/modal.js"></script>
+    <script src="./js/templates/getGrid.js"></script>
+    <script src="./js/templates/dataListApi.js"></script>
+    <script src="./js/templates/dataListCompleto.js"></script>
+    <script src="./js/templates/table.js"></script>
+    <script src="./js/templates/tableInputs.js"></script>
+    <script src="./js/templates/pagina.js"></script>
+
+    <script src="./js/users/administrador/apuestasAdministrador.js"></script>
+    <script src="./js/users/administrador/clientesAdministrador.js"></script>
+    <script src="./js/users/administrador/premiosAdministrador.js"></script>
+
+    <script src="./js/users/coordinador/accionesCoordinador.js"></script>
+    <script src="./js/users/coordinador/beneficiadosCoordinador.js"></script>
+    <script src="./js/users/coordinador/voluntariosCoordinador.js"></script>
+
+    <script src="./js/users/voluntario/accionesVoluntario.js"></script>
+
+    <script src="./js/const.js"></script>
+
+</head>
+
+<body>
+    <div class="spinnerContainer" id="spinnerContainer" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="modalError" id="modalError" style="display: none;">
+        <div class="modalErrorBody" id="modalErrorBody">
+            <div class="modalErrorTexto" id="modalErrorTexto"></div>
+            <div class="modalErrorBoton" id="modalErrorBoton" onclick="cerrarModalError()">Cerrar</div>
+        </div>
+    </div>
+
+    <div class="nav3Container" id="nav3Container">
+        <div class="nav3" id="nav3">
+            <div class="nav3Header">
+                <div class="titulonav3Header">Menú</div>
+                <div class="cerrarMenu" id="cerrarMenu" onclick="cerrarMenu()">&times;</div>
+            </div>
+            <div class="nav3_menu" id="nav3_menu"></div>
+        </div>
+        <div class="sobrante" onclick="cerrarMenu()"></div>
+    </div>
+
+    <main>
+        <section class="login" id="login"></section>
+        <section class="gridContainer administrador" id="ADMINISTRADOR"></section>
+    </main>
+
+    <!-------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------->
+    <script>
+        //prueba: http://localhost/acitui-facturacion/?email=socio2@socio.es&password=vankh991
+        //PARAMETROS
+        //Comprobar si tiene parametros en la url
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+        const pass = urlParams.get('password');
+        if (email && pass) {
+            //limpiar localStorage
+            localStorage.clear();
+
+            let datos = {
+                user: email,
+                password: pass
+            }
+
+            localStorage.setItem('usuario', email);
+
+            //obtener la url completa
+            let url = window.location.href;
+
+            //eliminar los parametros de la url
+            let urlSinParametros = url.split('?')[0];
+
+            //insertar la url sin parametros en el navegador
+            window.history.pushState({}, document.title, urlSinParametros);
+
+            query('Login', 'initLogin', datos, 'guardarDatosLogin');
+        }
+
+    </script>
+
+    <script>
+        // Función para cerrar el modal de error
+        function cerrarModalError() {
+            document.getElementById('modalError').style.display = 'none';
+        }
+
+        const header1 = `
+            <header class="headerGrande" id="headerGrande">
+                <div class="nav1Container" id="nav1Container">
+                    <div class="nav1" id="nav1">
+                        <div class="logo" id="logo"></div>
+                        <div class="buscador">
+                            <div class="buscador_input" id="buscador_input">
+                                <input type="text" name="buscador" id="buscador" placeholder="Buscar..." oninput="resetBusqueda()">
+                                <button id="resetButton" onclick="resetBusqueda(true)">X</button>
+                                <div class="buscador_lupa" id="buscador_lupa" onclick="aplicarBusqueda()">
+                                    <img src="./imgs/lupa.svg" alt="Buscar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usuario" id="usuario">
+                            <div class="usuario_nombre" id="usuario_nombre"></div>
+                            <div class="usuario_foto" id="usuario_foto"></div>
+                            <div class="usuario_salir" id="usuario_salir" onclick="cerrarSesion()">
+                                <img src="./imgs/exit.svg" alt="Salir">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav2Container" id="nav2Container">
+                <div class="nav2" id="nav2">
+                    <div class="hamburguesa1" id="hamburguesa1" onclick="hamburguesa()">
+                        <img src="./imgs/hamburguesa1.svg" alt="Menú">
+                    </div>
+                    <div class="nav2_menu" id="nav2_menu"></div>
+                </div>
+            </div>
+        `;
+        const header2 = `
+            <header class="headerSmall" id="headerSmall">
+                <div class="nav1Container" id="nav1Container">
+                    <div class="nav1" id="nav1">
+                        <div class="logo" id="logo"></div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav2ContainerSmall" id="nav2ContainerSmall">
+                <div class="nav2" id="nav2">
+                    <div class="hamburguesa1" id="hamburguesa1" onclick="hamburguesa()">
+                        <img src="./imgs/hamburguesa2.svg" alt="Menú">
+                    </div>
+                    <div class="buscador">
+                        <div class="buscador_input" id="buscador_input">
+                            <input type="text" name="buscador" id="buscador" placeholder="Buscar..." oninput="resetBusqueda()">
+                            <button id="resetButton" onclick="resetBusqueda(true)">X</button>
+                            <div class="buscador_lupa" id="buscador_lupa" onclick="aplicarBusqueda()">
+                                <img src="./imgs/lupa.svg" alt="Buscar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="usuario_salir" id="usuario_salir" onclick="cerrarSesion()">
+                        <img src="./imgs/exit.svg" alt="Salir">
+                    </div>
+                </div>
+            </div>
+        `;
+
+        //si la pantalla es menor a 800px carga el header2 al principio del body y si no carga el header1
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let anchoVentana = window.innerWidth; // Almacenar el ancho inicial de la ventana
+
+            window.addEventListener('resize', function () {
+                // Comprobar si el ancho de la ventana ha cambiado
+                if (window.innerWidth !== anchoVentana) {
+                    anchoVentana = window.innerWidth; // Actualizar el ancho almacenado
+
+                    // Tu lógica de redimensionamiento aquí
+                    if (document.getElementById('headerSmall') != null) {
+                        document.getElementById('headerSmall').remove();
+                    }
+
+                    if (document.getElementById('nav2ContainerSmall') != null) {
+                        document.getElementById('nav2ContainerSmall').remove();
+                    }
+
+                    if (document.getElementById('headerGrande') != null) {
+                        document.getElementById('headerGrande').remove();
+                    }
+
+                    if (document.getElementById('nav2Container') != null) {
+                        document.getElementById('nav2Container').remove();
+                    }
+
+                    if (window.innerWidth < 800) {
+                        document.body.innerHTML = header2 + document.body.innerHTML;
+                    } else {
+                        document.body.innerHTML = header1 + document.body.innerHTML;
+                    }
+
+                    let usuario = JSON.parse(localStorage.getItem('usuario'));
+                    generarMenuData(usuario);
+                }
+            });
+
+            // La lógica inicial de redimensionamiento aquí
+            if (window.innerWidth < 800) {
+                document.body.innerHTML = header2 + document.body.innerHTML;
+            } else {
+                document.body.innerHTML = header1 + document.body.innerHTML;
+            }
+
+            // Evento para el buscador
+            document.getElementById('buscador').addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    document.getElementById('buscador_lupa').click();
+                }
+            });
+        });
+
+        function aplicarBusqueda() {
+            let location = localStorage.getItem('location');
+
+            if (locationHandlers[location]) {
+                locationHandlers[location]();
+            } else {
+                console.log('No se ha encontrado la ubicación');
+            }
+        }
+
+        function resetBusqueda(forzarReset = false) {
+            let buscador = document.getElementById('buscador');
+            let location = localStorage.getItem('location');
+
+            if (buscador.value != '' && !forzarReset) {
+                return;
+            }
+
+            buscador.value = '';
+            buscador.focus();
+
+            aplicarBusqueda();
+        }
+
+        function cerrarSesion() {
+            localStorage.clear();
+            location.reload();
+        }
+    </script>
+
+    <script src="./js/onLoad.js"></script>
+    <script src="./chat-whatsapp/chat-whatsapp.js"></script>
+</body>
+
+</html>

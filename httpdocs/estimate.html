@@ -1,0 +1,358 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <style>
+        section {
+            margin-top: 25px;
+        }
+
+        /*#ebecf0 #dfe1e6*/
+        .textAreaSimulate {
+            width: calc(100% - 12px);
+            padding: 5px;
+            min-height: 5px;
+            border: 1px solid #cccccc00;
+            border-radius: 2px;
+            font-size: 13px;
+            font-family: sans-serif;
+            resize: none;
+            overflow: hidden;
+            background-color: var(--ds-background-neutral, rgba(9, 30, 66, 0.04));
+            margin-bottom: 5px;
+            cursor: text;
+        }
+
+        /*selection*/
+        .textAreaSimulate::selection {
+            background-color: #0079bf;
+            color: white;
+        }
+
+        .textAreaSimulate:focus {
+            outline: none;
+            border: 1px solid #b6b8bc;
+            background-color: #f6f7f9;
+        }
+
+        /*hover*/
+        .textAreaSimulate:hover {
+            border: 1px solid #b6b8bc;
+            background-color: var(--ds-background-neutral-hovered, rgba(9, 30, 66, 0.08))
+        }
+
+        .formContainer {
+            width: 100%;
+        }
+
+        .barra-carga {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #3498db;
+            animation: cargar 2s linear infinite;
+        }
+
+        .barra-carga-fondo {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #133d59;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        label span {
+            font-size: 12px;
+            background-color: rgba(9, 30, 66, 0.04);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .enlaceInfo {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .mensajeDeAlerta {
+            width: 85%;
+            padding: 5px;
+            background-color: #e7b73c;
+            color: rgb(33, 33, 33);
+        }
+
+        .mensajeDePeligro {
+            width: 85%;
+            padding: 5px;
+            background-color: #e74c3c;
+            color: rgb(214, 214, 214);
+        }
+
+        .aqui {
+            cursor: pointer;
+            color: rgb(33, 33, 33);
+            text-decoration: underline;
+        }
+
+        .enlaceExit {
+            top: 0;
+            right: 25px;
+            z-index: 100;
+        }
+
+        @keyframes cargar {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+    </style>
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+
+</head>
+
+<body>
+
+    <!--WARNINGS & ALERTS-->
+    <div class="mensajeDeAlerta" id="mensajeDeAlerta" style="display: none;">
+        <span data-translate="TokensAPuntoDeAgotarseActualizaTuPlan">Tokens a punto de agotarse, actualiza tu plan
+        </span>
+        <a href="./info/precios/" target="_blank" class="aqui" data-translate="aqui">aquí</a>
+    </div>
+
+    <div class="mensajeDePeligro" id="mensajeDePeligro" style="display: none;">
+        <span data-translate="tokensMensualesAgotadosActualizaTuPlan">Tokens mensuales agotados, actualiza tu plan
+        </span>
+        <a href="./info/precios/" target="_blank" class="aqui" data-translate="aqui">aquí</a>
+    </div>
+
+    <!--LOGIN-->
+    <section id="login" style="display: block;">
+        <div class="formContainer" id="loginForm" onsubmit="return validateForm('login')">
+            <input type="email" id="loginEmail" name="email" placeholder="Email" required>
+            <input type="password" id="loginPassword" name="password" placeholder="Password" minlength="8" required>
+            <input type="checkbox" onclick="togglePasswordVisibility('login')">
+            <span data-translate="mostrarContraseña">Mostrar contraseña</span>
+            <input type="submit" value="Entrar" data-translate="entrar" onclick="login()">
+            <p id="loginAviso"></p>
+            <a href="#" onclick="loginToRegistro()" data-translate="registrarse">Registrarse</a><br><br>
+            <a href="#" onclick="loginToRecuperar()" data-translate="olvidasteContraseña">¿Has olvidado tu
+                contraseña?</a>
+        </div>
+    </section>
+
+    <!--RECUPERAR CONTRASEÑA-->
+    <section id="recuperar" style="display: none;">
+        <div id="recuperarForm" onsubmit="return validateForm('recuperar')">
+            <input type="email" id="recuperarEmail" name="email" placeholder="Email" required>
+            <input type="submit" value="Recuperar Contraseña" data-translate="recuperarContrasena"
+                onclick="recuperarContrasena()">
+            <p id="recuperarAviso"></p>
+            <a href="#" onclick="recuperarToLogin()" data-translate="volverInicioSesion">Volver al inicio de sesión</a>
+        </div>
+    </section>
+
+    <!--REGISTRO-->
+    <section id="registro" style="display: none;">
+        <div class="formContainer" id="registroForm" onsubmit="return validateForm('registro')">
+            <input type="email" id="registroEmail" name="email" placeholder="Email" required>
+            <input type="password" id="registroPassword" name="password" placeholder="Password" minlength="8" required>
+            <input type="checkbox" onclick="togglePasswordVisibility('registro')">
+            <span data-translate="mostrarContraseña">Mostrar contraseña</span>
+
+            <!--aceptar condiciones de uso-->
+            <div class="formGroup">
+                <input type="checkbox" id="registroCondiciones" name="condiciones" required>
+                <span for="registroCondiciones">
+                    <span data-translate="aceptoLas">Acepto las </span>
+                    <a href="./info/condiciones/" data-translate="condicionesDeUso">condiciones de uso</a>
+                </span>
+            </div>
+
+            <input type="submit" value="Registrarse" data-translate="registrarse" onclick="registro()">
+            <p id="registroAviso"></p>
+            <a href="#" onclick="registroToLogin()" data-translate="iniciarSesion">Iniciar sesión</a>
+        </div>
+    </section>
+
+    <!--PAGO-->
+    <section id="pago" style="display: none;">
+        <div class="formContainer">
+            <input type="submit" value="Seleccionar Plan de Pago" data-translate="selecionarPlanDePago"
+                onclick="pago()">
+            <p id="pagoAviso"></p>
+            <a href="#" onclick="registroToLogin()" data-translate="iniciarSesion">Iniciar sesión</a>
+        </div>
+    </section>
+
+    <!--SERVICIO-->
+    <section id="servicio" style="display: none;">
+        <div class="formContainer">
+            <div class="formGroup">
+                <label for="prompt" data-translate="consultarGpt">Consultar a GPT:</label>
+                <div style="display: flex; flex-direction: row; align-items: flex-end; justify-content: center;">
+                    <div contenteditable="true" class="textAreaSimulate" id="promptServicio"></div>
+                    <button style="margin: 0; margin-bottom: 5px; height: 41.6px; background-color: transparent;"
+                        onclick="consultarGpt()">
+                        <img src="assets/play.svg" alt="iconSend" height="20px">
+                    </button>
+                </div>
+
+                <label for="prompt">
+                    <div style="display: inline-block;" data-translate="tuTexto">Tu Texto</div>
+                    <span onclick="obtenerSugerenciaIA('titulo')" data-translate="titulo">✨ Título</span>
+                    <span onclick="obtenerSugerenciaIA('descripcion')" data-translate="descripcion">✨ Descripción</span>
+                </label>
+
+                <div contenteditable="true" class="textAreaSimulate" id="respuestaServicio"
+                    oninput="autocompletar(this.textContent, 'respuesta')"></div>
+
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                    <button style="padding: 5;" onclick="cambiarCampo('titulo')" data-translate="cambiarTitulo">Cambiar
+                        Título</button>
+                    <button style="padding: 5;" onclick="cambiarCampo('descripcion')"
+                        data-translate="cambiarDescripcion">Cambiar Descripción</button>
+                </div>
+                <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+                    <button style="padding: 5;" onclick="addDescripcion()" data-translate="anadirADescripcion">Añadir a
+                        Descripción</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--TRELLO-->
+    <section id="trelloAuth" style="display: none;">
+        <div class="formContainer">
+            <label data-translate="autorizarWairbot">Autorizo a Wairbot el acceso a lectura y modificación de este panel
+                y sus elementos asociados</label>
+            <input type="submit" value="Ya he Autorizado" data-translate="yaHeAutorizado" onclick="trelloAuth()">
+            <p id="trelloAuthAviso"></p>
+            <a href="#" onclick="registroToLogin()" data-translate="iniciarSesion">Iniciar sesión</a>
+        </div>
+    </section>
+
+    <!--CARGA-->
+    <div class="barra-carga-fondo" id="cargandoFondo" style="display: none;"></div>
+    <div class="barra-carga" id="cargandoBarra" style="display: none;"></div>
+
+    <!--ENLACE INFO-->
+    <a href="./info/ayuda/" id="enlaceInfo" class="enlaceInfo" target="_blank">
+        <img src="assets/info.svg" alt="iconInfo" height="18px">
+    </a>
+
+    <a href="" class="enlaceInfo enlaceExit" onclick="cerrarSesion()">
+        <img src="assets/exit.svg" alt="iconInfo" height="18px">
+    </a>
+
+    <script src="js/translate.js"></script>
+    <script src="js/trelloAuth.js"></script>
+    <script src="js/confi.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/formsValidate.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/registro.js"></script>
+    <script src="js/pago.js"></script>
+    <script src="js/servicio.js"></script>
+    <script src="js/query.js"></script>
+    <script src="js/recuperar.js"></script>
+
+    <script>
+        function ajustarAlturaTextArea(elemento) {
+            elemento.style.height = "auto"; // Restablecer la altura a auto
+            elemento.style.height = (elemento.scrollHeight) + "px"; // Establecer la altura según el contenido
+        }
+
+        // Función para aplicar el ajuste dinámico a todos los textarea
+        function aplicarAjusteDinamicoATextAreas() {
+            var textAreas = document.querySelectorAll('.textAreaSimulate');
+            textAreas.forEach(function (textarea) {
+                textarea.addEventListener('input', function () {
+                    ajustarAlturaTextArea(textarea);
+                });
+
+                ajustarAlturaTextArea(textarea);
+            });
+        }
+
+        // Aplicar el ajuste dinámico cuando se carga la página
+        window.addEventListener('load', aplicarAjusteDinamicoATextAreas);
+
+        // Crear un observador de mutaciones para vigilar cambios en el DOM
+        const observer = new MutationObserver((mutationsList, observer) => {
+            // Si se añade o se elimina un nodo, volver a aplicar el ajuste dinámico
+            for (let mutation of mutationsList) {
+                if (mutation.type === 'childList') {
+                    aplicarAjusteDinamicoATextAreas();
+                }
+            }
+        });
+
+        // Comenzar a observar el documento con la configuración configurada
+        observer.observe(document, { childList: true, subtree: true });
+
+        let elementoObservado = document.getElementById('pago');
+        let ultimoDisplay = window.getComputedStyle(elementoObservado).display;
+
+        const observer2 = new MutationObserver((mutationsList, observer) => {
+            for (let mutation of mutationsList) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    let displayActual = window.getComputedStyle(elementoObservado).display;
+                    if (displayActual !== ultimoDisplay) {
+                        ultimoDisplay = displayActual;
+
+                        let autorizacionUserData = localStorage.getItem('wairbotTrelloUserData');
+
+                        if (autorizacionUserData != null) {
+                            autorizacionUserData = JSON.parse(autorizacionUserData);
+                            let autorizado = autorizacionUserData.autorizado;
+
+                            if (autorizado == 0) {
+                                intervalId = setInterval(function () {
+                                    let loginElement = document.getElementById('login');
+                                    let displayStyle = window.getComputedStyle(loginElement).display;
+
+                                    if (displayStyle !== 'none') {
+                                        clearInterval(intervalId);
+                                        return;
+                                    }
+
+                                    let userData = JSON.parse(localStorage.getItem('wairbotTrelloUserData'));
+                                    let token = userData.token;
+                                    let id = userData.id;
+
+                                    let data = {
+                                        token: token,
+                                        id: id
+                                    };
+
+                                    query(data, 'getUserData', 'checkAutorizacion');
+                                }, 5000);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        observer2.observe(elementoObservado, { attributes: true });
+    </script>
+
+</body>
+
+</html>

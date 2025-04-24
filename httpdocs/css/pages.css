@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: rgb(0,121,28);
+    background: linear-gradient(25deg, rgba(0,121,28,1) 0%, rgba(95,255,0,1) 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #33333369;
+    padding: 15px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    float: left;
+    margin-left: 20px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#logo:hover {
+    scale: 1.1;
+}
+
+nav {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #001c24;
+}
+
+.menu-button {
+    display: none;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.footerFirma{
+    font-size: small;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerFirma img{
+    margin-left: 5px;
+}
+
+.footerEnlaces{
+    background-color: rgba(0, 0, 0, 0.867);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 100px;
+    font-size: small;
+}
+.footerEnlaces div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 50px;
+}
+.footerEnlaces a{
+    color: #c9c9c9;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+}
+
+.footerEnlaces a:hover{
+    color: #fff;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.mainContainer{
+    background-color: #fff;
+    max-width: 1256px;
+    padding: 20px;
+    color: rgb(28, 28, 28);
+}
+
+.mainContainer h1{
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.mainContainer h2{
+    font-size: 1.8em;
+    color: #00570f;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.mainContainer h3{
+    font-size: 1.2em;
+    color: #009c1a;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.mainContainer p{
+    margin-top: 5px;
+}
+
+.mainContainer img{
+    width: 85%;
+    margin-left: calc(50% - 42.5%);
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.littleImage{
+    width: auto !important;
+    height: 250px !important;
+    border: 1px solid #6e6e6e;
+    margin-left: calc(50% - 125px) !important;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        text-align: right;
+        top: 95px; /* Ajusta esta propiedad para mover el menú debajo del encabezado */
+        right: 0px;
+        background-color: #001c24;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .footerFirma{
+        font-size: x-small;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footerFirma img{
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+
+    .footerEnlaces{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px 0px;
+    }
+
+    .footerEnlaces div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 0px;
+    }
+
+    .footerEnlaces a{
+        color: #c9c9c9;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        padding: 10px;
+    }
+}

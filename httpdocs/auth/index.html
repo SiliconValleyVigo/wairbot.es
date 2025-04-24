@@ -1,0 +1,180 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: rgb(238, 238, 238);
+        }
+        #trelloAuth {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #trelloAuth div {
+            width: calc(100% - 50px);
+            max-width: 500px;
+            text-align: center;
+            padding: 25px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.615);
+            border-radius: 10px;
+        }
+        #trelloAuth h1 {
+            font-size: 2em;
+        }
+        #trelloAuth p {
+            margin-top: 0;
+        }
+        #trelloAuth input {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: none;
+            background-color: #0079bf;
+            color: #fff;
+            font-size: 1.5em;
+            cursor: pointer;
+            width: 50%;
+        }
+        #trelloAuth input:hover {
+            background-color: #005ea6;
+        }
+        #trelloAuthAviso {
+            color: red;
+        }
+        #trelloAuth h3 {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        #trelloAuth a {
+            color: #0079bf;
+        }
+        #trelloAuth a:hover {
+            color: #005ea6;
+        }
+
+    </style>
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+  </head>
+  <body>
+
+    <!--TRELLO-->
+    <section id="trelloAuth">
+        <div>
+            <h1 data-translate="autorizacion">Autorización</h1>
+            <p>
+                <img src="../assets/iconWairbotAC.png" alt="" height="70px" style="margin: 10px;">
+                <img src="../assets/trello.svg" alt="" height="65px" style="margin: 10px;">
+            </p>
+            <p data-translate="autorizacionTexto">Autoriza a Wairbot el acceso a lectura y modificación de este panel y sus elementos asociados</p>
+            <input type="submit" value="Autorizar" data-translate="botonAutorizo" onclick="trelloAuth()">
+            <p id="trelloAuthAviso"></p>
+            <h3 data-translate="tituloPorqueAutorizo">¿Porque debo realizar esta autorización?</h3>
+            <p data-translate="textoPorqueAutorizo">Para que Wairbot pueda funcionar correctamente, necesita acceder a los datos de este panel y sus elementos asociados para poder leerlos y modificarlos. Estos datos no se guardaran en la base de datos de Wairbot ni ningún otro tipo de registro bajo ninguna circunstancia.</p>
+            <h3 data-translate="saberMas">Saber más</h3>
+            <a href="../info/condiciones/" target="_blank" data-translate="terminosYCondicionesDeUso">Terminos y condiciones de uso</a><br>
+            <a href="../info/proteccion-de-datos/" target="_blank" data-translate="politicaDePrivacidad">Política de privacidad</a><br>
+            <a href="../info/cookies/" target="_blank" data-translate="politicaDeCookies">Política de cookies</a>
+        </div> 
+    </section>
+
+    <script src="../js/avisoCookies.js"></script>
+    <script>
+        const trelloKey = '64b5b4f9c7e3e7606d024d4f3529d143';
+        const server = 'https://wairbot.es/server.php';
+
+        function trelloAuth(){
+            //url de autorización
+            let urlAuth = 'https://trello.com/1/authorize?expiration=never&name=MyPersonalToken&scope=read,write&response_type=token&key=' + trelloKey + '&return_url=https://wairbot.es/auth/';
+
+            //redirigir a la url de autorización en la misma pestaña
+            window.location.href = urlAuth;
+        }
+
+        function checkTrelloTokenInUrl() {
+            // Obtener la URL actual
+            const currentUrl = window.location.href;
+
+            // Buscar el parámetro 'token' en la URL
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const token = urlParams.get('userToken');
+            const id = urlParams.get('userId');
+
+            //guardar en localstorage si no es null
+            if(token != null){
+                localStorage.setItem('userToken', token);
+                localStorage.setItem('userId', id);
+            }else{
+                //obtener la url completa
+                const url = window.location.href;
+                const trelloToken = url.split('#token=')[1];
+                
+                //si trelloToken no es undefined
+                if (trelloToken) {
+                    //obtener info de usuario
+                    let userToken = localStorage.getItem('userToken');
+                    let userId = localStorage.getItem('userId');
+
+                    let data = {
+                        token: userToken,
+                        id: userId,
+                        trello: trelloToken
+                    };
+
+                    query(data, 'trello', 'trelloAuthResult');
+                }
+            }
+        }
+
+        function trelloAuthResult(res, actionServer) {
+            if (res.status == 'success') {
+                //cerrar ventana
+                window.close();
+            } else {
+                //mostrar error
+                document.getElementById('trelloAuthAviso').innerHTML = res.message;
+            }
+        }
+
+        function query(data, actionServer, actionResult) {
+            data.funcion = actionServer;
+
+            fetch(server, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                redirect: 'manual' // Agregado para prevenir redirecciones automáticas
+            })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`HTTP error! status: ${res.status}`);
+                }
+                return res.json();
+            }) // Agregado manejo de errores HTTP
+            .then(res => {
+                if (typeof window[actionResult] === "function") {
+                    window[actionResult](res, actionServer);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Llamar a la función cuando la página se carga
+        checkTrelloTokenInUrl();
+    </script>
+    <script src="../js/translate.js"></script>
+    
+  </body>
+</html>
