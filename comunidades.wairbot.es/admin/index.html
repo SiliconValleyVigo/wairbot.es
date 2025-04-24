@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wairbot Gestión de Comunidades</title>
+    <meta name="description" content="Aquí va la descripción de la página">
+    <link rel="icon" href="./imgs/favicon.png">
+
+    <link rel="stylesheet" href="./css/globals.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/inputs.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/modal.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+    <script src="./js/const.js"></script>
+    <script src="./js/query.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/menus.js"></script>
+    <script src="./js/templates/card.js"></script>
+    <script src="./js/templates/form.js"></script>
+    <script src="./js/templates/grid.js"></script>
+    <script src="./js/templates/modal.js"></script>
+    <script src="./js/templates/getGrid.js"></script>
+
+    <script src="./js/users/administrador/agentes.js"></script>
+
+    <script src="./js/users/agente/ampliaciones.js"></script>
+    <script src="./js/users/agente/comunidades.js"></script>
+    <script src="./js/users/agente/formularios.js"></script>
+    <script src="./js/users/agente/incidenciasAbiertas.js"></script>
+    <script src="./js/users/agente/incidenciasCerradas.js"></script>
+    <script src="./js/users/agente/lugares.js"></script>
+    <script src="./js/users/agente/solicitudes.js"></script>
+    <script src="./js/users/agente/tecnicos.js"></script>
+    <script src="./js/users/agente/historial.js"></script>
+    <script src="./js/users/agente/residentes.js"></script>
+
+</head>
+
+<body>
+    <style>
+        .spinnerContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 3;
+            width: 100%;
+            height: 80dvh;
+            background-color: rgba(255, 255, 255, 0.433)
+        }
+    </style>
+    <div class="spinnerContainer" id="spinnerContainer" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+    
+    <style>
+        .modalError {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modalErrorBody {
+            margin: auto;
+            padding: 20px;
+            border: 2px solid #410000;
+            width: 80%;
+            background-color: rgb(224, 165, 165);
+            border-radius: 10px;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .modalErrorTexto {
+            margin-bottom: 20px;
+            color: rgb(132, 20, 0);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .modalErrorBoton {
+            padding: 10px 20px;
+            color: rgb(132, 20, 0);
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+    </style>
+    <div class="modalError" id="modalError" style="display: none;">
+        <div class="modalErrorBody" id="modalErrorBody">
+            <div class="modalErrorTexto" id="modalErrorTexto"></div>
+            <div class="modalErrorBoton" id="modalErrorBoton" onclick="cerrarModalError()">Cerrar</div>
+        </div>
+    </div>
+
+    <div class="nav3Container" id="nav3Container">
+        <div class="nav3" id="nav3">
+            <div class="nav3Header">
+                <div class="titulonav3Header">Menú</div>
+                <div class="cerrarMenu" id="cerrarMenu" onclick="cerrarMenu()">&times;</div>
+            </div>
+            <div class="nav3_menu" id="nav3_menu"></div>
+        </div>
+        <div class="sobrante" onclick="cerrarMenu()"></div>
+    </div>
+
+    <main>
+        <section class="login" id="login"></section>
+        <section class="gridContainer administrador" id="ADMINISTRADOR"></section>
+        <section class="gridContainer agente" id="AGENTE"></section>
+    </main>
+
+    <!-------------------------------------------------------------------------------------------->
+    <!-------------------------------------------------------------------------------------------->
+
+    <script>
+        // Función para cerrar el modal de error
+        function cerrarModalError() {
+            document.getElementById('modalError').style.display = 'none';
+        }
+
+        const header1 = `
+            <header class="headerGrande" id="headerGrande">
+                <div class="nav1Container" id="nav1Container">
+                    <div class="nav1" id="nav1">
+                        <div class="logo" id="logo"></div>
+                        <div class="buscador">
+                            <div class="buscador_input" id="buscador_input">
+                                <input type="text" name="buscador" id="buscador" placeholder="Buscar..." oninput="resetBusqueda()">
+                                <button id="resetButton" onclick="resetBusqueda(true)">X</button>
+                                <div class="buscador_lupa" id="buscador_lupa" onclick="aplicarBusqueda()">
+                                    <img src="./imgs/lupa.svg" alt="Buscar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usuario" id="usuario">
+                            <div class="usuario_nombre" id="usuario_nombre"></div>
+                            <div class="usuario_foto" id="usuario_foto"></div>
+                            <div class="usuario_salir" id="usuario_salir" onclick="cerrarSesion()">
+                                <img src="./imgs/exit.svg" alt="Salir">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav2Container" id="nav2Container">
+                <div class="nav2" id="nav2">
+                    <div class="hamburguesa1" id="hamburguesa1" onclick="hamburguesa()">
+                        <img src="./imgs/hamburguesa1.svg" alt="Menú">
+                    </div>
+                    <div class="nav2_menu" id="nav2_menu"></div>
+                </div>
+            </div>
+        `;
+        const header2 = `
+            <header class="headerSmall" id="headerSmall">
+                <div class="nav1Container" id="nav1Container">
+                    <div class="nav1" id="nav1">
+                        <div class="logo" id="logo"></div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav2ContainerSmall" id="nav2ContainerSmall">
+                <div class="nav2" id="nav2">
+                    <div class="hamburguesa1" id="hamburguesa1" onclick="hamburguesa()">
+                        <img src="./imgs/hamburguesa2.svg" alt="Menú">
+                    </div>
+                    <div class="buscador">
+                        <div class="buscador_input" id="buscador_input">
+                            <input type="text" name="buscador" id="buscador" placeholder="Buscar..." oninput="resetBusqueda()">
+                            <button id="resetButton" onclick="resetBusqueda(true)">X</button>
+                            <div class="buscador_lupa" id="buscador_lupa" onclick="aplicarBusqueda()">
+                                <img src="./imgs/lupa.svg" alt="Buscar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="usuario_salir" id="usuario_salir" onclick="cerrarSesion()">
+                        <img src="./imgs/exit.svg" alt="Salir">
+                    </div>
+                </div>
+            </div>
+        `;
+
+        //si la pantalla es menor a 800px carga el header2 al principio del body y si no carga el header1
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let anchoVentana = window.innerWidth; // Almacenar el ancho inicial de la ventana
+
+            window.addEventListener('resize', function () {
+                // Comprobar si el ancho de la ventana ha cambiado
+                if (window.innerWidth !== anchoVentana) {
+                    anchoVentana = window.innerWidth; // Actualizar el ancho almacenado
+
+                    // Tu lógica de redimensionamiento aquí
+                    if (document.getElementById('headerSmall') != null) {
+                        document.getElementById('headerSmall').remove();
+                    }
+
+                    if (document.getElementById('nav2ContainerSmall') != null) {
+                        document.getElementById('nav2ContainerSmall').remove();
+                    }
+
+                    if (document.getElementById('headerGrande') != null) {
+                        document.getElementById('headerGrande').remove();
+                    }
+
+                    if (document.getElementById('nav2Container') != null) {
+                        document.getElementById('nav2Container').remove();
+                    }
+
+                    if (window.innerWidth < 800) {
+                        document.body.innerHTML = header2 + document.body.innerHTML;
+                    } else {
+                        document.body.innerHTML = header1 + document.body.innerHTML;
+                    }
+
+                    let usuario = JSON.parse(localStorage.getItem('usuario'));
+                    generarMenuData(usuario);
+                }
+            });
+
+            // La lógica inicial de redimensionamiento aquí
+            if (window.innerWidth < 800) {
+                document.body.innerHTML = header2 + document.body.innerHTML;
+            } else {
+                document.body.innerHTML = header1 + document.body.innerHTML;
+            }
+
+            // Evento para el buscador
+            document.getElementById('buscador').addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    document.getElementById('buscador_lupa').click();
+                }
+            });
+        });
+
+        function aplicarBusqueda() {
+            let location = localStorage.getItem('location');
+
+            if (location == 'agentes') {
+                getAgentes();
+            } else if (location == 'Ampliaciones') {
+                getAmpliaciones();
+            } else if (location == 'Comunidades') {
+                getComunidades();
+            } else if (location == 'Formularios') {
+                getFormularios();
+            } else if (location == 'IncidenciasAbiertas') {
+                getIncidenciasAbiertas();
+            } else if (location == 'IncidenciasCerradas') {
+                getIncidenciasCerradas();
+            } else if (location == 'Lugares') {
+                getLugares();
+            } else if (location == 'Solicitudes') {
+                getSolicitudes();
+            } else if (location == 'Tecnicos') {
+                getTecnicos();
+            } else if (location == 'Historial') {
+                getHistorial();
+            }else if (location == 'Residentes') {
+                getResidentes();
+            } else {
+                console.log('No se ha encontrado la ubicación');
+            }
+        }
+
+        function resetBusqueda(forzarReset = false) {
+            console.log('resetBusqueda');
+            let buscador = document.getElementById('buscador');
+            let location = localStorage.getItem('location');
+
+            if (buscador.value != '' && !forzarReset) {
+                return;
+            }
+
+            buscador.value = '';
+            buscador.focus();
+
+            if (location == 'agentes') {
+                getAgentes();
+            } else if (location == 'Ampliaciones') {
+                getAmpliaciones();
+            } else if (location == 'Comunidades') {
+                getComunidades();
+            } else if (location == 'Formularios') {
+                getFormularios();
+            } else if (location == 'IncidenciasAbiertas') {
+                getIncidenciasAbiertas();
+            } else if (location == 'IncidenciasCerradas') {
+                getIncidenciasCerradas();
+            } else if (location == 'Lugares') {
+                getLugares();
+            } else if (location == 'Solicitudes') {
+                getSolicitudes();
+            } else if (location == 'Tecnicos') {
+                getTecnicos();
+            } else if (location == 'Historial') {
+                getHistorial();
+            } else if (location == 'Residentes') {
+                getResidentes();
+            } else {
+                console.log('No se ha encontrado la ubicación');
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.clear();
+            location.reload();
+        }
+    </script>
+    <script src="./js/onLoad.js"></script>
+</body>
+
+</html>

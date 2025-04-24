@@ -1,0 +1,2 @@
+id,barcode,piloto,factura,fecha,carrera,marca,medida,modelo,compuesto,almacen,creado_por,fecha_creado,modificado_por,fecha_modificado,time_stamp
+31,41414141,"Piloto E",asdf,2024-04-10,"La Carrera C","marca 2","medida 2","modelo 2","compuesto 2","almacen 2",1,2024-04-13,1,2024-04-13T13:54:49.223Z,"2024-04-13 15:54:49"

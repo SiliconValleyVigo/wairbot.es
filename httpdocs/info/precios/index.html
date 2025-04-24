@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/iconWAC.png" type="image/png" sizes="16x16">
+    <title data-translate="title">Titulo</title>
+    <link rel="stylesheet" href="/css/pages.css">
+    <style>
+        .planesContainer {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .planBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 15px;
+            max-width: 300px;
+            scale: 1;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .planBox:hover {
+            scale: 1.025;
+        }
+
+        .planBox h2 {
+            margin: 5px;
+        }
+
+        .planBox p {
+            margin: 15px;
+        }
+
+        .planStarterBox{
+            border: 3px solid rgb(209, 199, 2);
+            box-shadow: 3px 3px 0px 0px rgb(209, 199, 2);
+        }
+
+        .planStarterBox:hover{
+            box-shadow: 8px 8px 0px 0px rgb(209, 199, 2);
+        }
+
+        .planVersatileBox{
+            border: 3px solid rgb(127, 0, 185);
+            box-shadow: 3px 3px 0px 0px rgb(127, 0, 185);
+        }
+
+        .planVersatileBox:hover{
+            box-shadow: 8px 8px 0px 0px rgb(127, 0, 185);
+        }
+        
+        .planHorizonBox{
+            border: 3px solid rgb(255, 132, 0);
+            box-shadow: 3px 3px 0px 0px rgb(255, 132, 0);
+        }
+
+        .planHorizonBox:hover{
+            box-shadow: 8px 8px 0px 0px rgb(255, 132, 0);
+        }
+
+        .planBox h3 {
+            margin: 5px;
+            font-size: 1.5em;
+        }
+
+        .planBox h3 span {
+            vertical-align: text-top;
+            font-size: 0.7em;
+            margin-left: 3px;
+        }
+
+        .planBox button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: none;
+            color: #fff;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 65%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .planStarterBox button {
+            background-color: rgb(209, 199, 2);
+        }
+
+        .planStarterBox button:hover {
+            background-color: rgb(123, 117, 0);
+        }
+
+        .planVersatileBox button {
+            background-color: rgb(127, 0, 185);
+        }
+
+        .planVersatileBox button:hover {
+            background-color: rgb(59, 1, 86);
+        }
+
+        .planHorizonBox button {
+            background-color: rgb(255, 132, 0);
+        }
+
+        .planHorizonBox button:hover {
+            background-color: rgb(102, 53, 1);
+        }
+
+        /*popup*/
+        .avisoLogin {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+
+        .avisoLoginContainer {
+            width: calc(100% - 50px);
+            max-width: 500px;
+            text-align: center;
+            padding: 25px;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.615);
+            border-radius: 10px;
+        }
+
+        .avisoLoginContainer h2 {
+            font-size: 2em;
+        }
+
+        .avisoLoginContainer p {
+            margin-top: 0;
+        }
+
+        .avisoLoginContainer a {
+            color: #0079bf;
+        }
+
+        .avisoLoginContainer a:hover {
+            color: #005ea6;
+        }
+
+        .avisoLoginContainer img {
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .planBox {
+                width: 100%;
+            }
+
+            .planBox button {
+                width: 100%;
+            }
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <div class="mainContainer" style="text-align: center;">
+            <h1 data-translate="preciosTitulo">PLANES Y PRECIOS</h1>
+            <p data-translate="preciosParrafo1">
+                Selecciona el plan que mejor se adapte a tus necesidades
+            </p>
+            <div class="planesContainer">
+                <div class="planBox planStarterBox">
+                    <img src="/assets/planStarter.png" alt="Plan Starter" height="128px">
+                    <h2 data-translate="starterPlan">Starter Plan</h2>
+                    <p data-translate="parrafoStarterPlan">Uso recomendado para la mayoría de los casos, pensada para el uso diario de la Power-Up</p>
+                    <p>2M <a href="https://platform.openai.com/tokenizer" target="_blank" target="_blank" title="?"> Tokens Open AI</a></p>
+                    <h3>6.50<span data-translate="dolarMes">$/mes</span></h3>
+                    <button onclick="contratar('planStarter')" data-translate="contratar">Contratar</button>
+                </div>
+                <div class="planBox planVersatileBox">
+                    <img src="/assets/planVersatile.png" alt="Plan Starter" height="128px">
+                    <h2 data-translate="versatilePlan">Versatile Plan</h2>
+                    <p data-translate="parrafoVersatilePlan">Ideal para realizar muchas consultas y tener la experiencia de chatGPT dentro de tu card de Trello</p>
+                    <p>4M <a href="https://platform.openai.com/tokenizer" target="_blank" target="_blank" title="?"> Tokens Open AI</a></p>
+                    <h3>12.00<span data-translate="dolarMes">$/mes</span></h3>
+                    <button onclick="contratar('planVersatile')" data-translate="contratar">Contratar</button>
+                </div>
+                <div class="planBox planHorizonBox">
+                    <img src="/assets/planHorizon.png" alt="Plan Starter" height="128px">
+                    <h2 data-translate="horizonPlan">Horizon Plan</h2>
+                    <p data-translate="parrafoHorizonPlan">Aprovecha el poder generativo de Open AI para generar el contenido de su card de Trello</p>
+                    <p>8M <a href="https://platform.openai.com/tokenizer" target="_blank" title="?"> Tokens Open AI</a></p>
+                    <h3>23.00<span data-translate="dolarMes">$/mes</span></h3>
+                    <button onclick="contratar('planHorizon')" data-translate="contratar">Contratar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--PopUp Aviso de login-->
+    <div id="avisoLogin" class="avisoLogin" style="display: none;">
+        <div class="avisoLoginContainer">
+            <h2 data-translate="bienvenido">¡Bienvenido!</h2>
+            <p data-translate="parrafoAvisoLogin">Para poder contratar un plan, debes iniciar sesión desde la Power-up de Trello</p>
+            <a href="http://trello.com">
+                <span data-translate="irATrello">Ir a Trello</span>
+                <img src="/assets/trello.svg" alt="trello" height="20px">
+            </a><br>
+            <a href="/info/ayuda/#inicioSesion" data-translate="ayudaIniciarWairbot">¿Como iniciar Wairbot Text Autocomplete en Trello?</a>
+        </div>
+    </div>
+        
+    <footer></footer>
+
+    <script src="/js/headerAndFooter.js"></script>
+    <script src="/js/avisoCookies.js"></script>
+    <script src="/js/pages.js"></script>
+    <script src="/js/translate.js"></script>
+    <script>
+        function contratar(plan) {
+            let email = false;
+            
+            if (window.location.href.indexOf("email") > -1) {
+                email = window.location.href.split("email=")[1];
+                if (!email.includes("@") && !email.includes(".")) {
+                    email = false;
+                }
+            }
+
+            if (email) {
+                if(plan == 'planStarter'){
+                    window.location.href = 'https://buy.stripe.com/3cs4hzcClfTfarKcMM?prefilled_email=' + email;
+                } else if(plan == 'planVersatile'){
+                    window.location.href = 'https://buy.stripe.com/5kAaFX8m536t0RadQR?prefilled_email=' + email;
+                } else if(plan == 'planHorizon'){
+                    window.location.href = 'https://buy.stripe.com/00gbK11XHcH3gQ84gi?prefilled_email=' + email;
+                }
+            } else {
+                document.getElementById('avisoLogin').style.display = 'flex';
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContenido {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    max-height: 90dvh;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modalTitulo {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.cerrarModal {
+    font-size: 1.5em;
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.modalBodyContenido {
+    height: 70dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+@media (max-width: 800px) {
+    .modalContenido {
+        width: 90%;
+        max-height: 95dvh;
+        padding: 5px;
+    }
+
+    .modalBodyContenido {
+        height: 80dvh;
+        padding: 0;
+    }
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+}
+
+.modalBoton {
+    margin-top: 6px;
+    padding: 10px 20px;
+    border: 1px solid #888;
+    cursor: pointer;
+}
+
+.modal .headerGrid {
+    width: 100% !important;
+}
+
+.modal .grid{
+    width: 100% !important;
+}
+
+.modalAvisoContainer {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.modalAviso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modalAvisoHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modalAvisoTitulo {
+    font-size: 1.2em;
+}
+
+.modalAvisoCerrar {
+    scale: 1.5;
+    cursor: pointer;
+}
+
+.modalAvisoMensaje {
+    width: calc(100% - 20px);
+    text-align: center;
+    padding: 10px;
+}
+
+.modalAvisoFooter {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modalAvisoBoton {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+/**/
+
+.checkTecnicoModal {
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.selectTecnico {
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.selectTecnico select {
+    width: 100%;
+    font-size: 16px;
+}
+
+.selectTecnico select option {
+    padding: 20px 10px;
+}
+
+.inputPassword {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputPassword input {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: large;
+    text-align: center;
+}
+
+.tecladoNumerico {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fila {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fila button {
+    width: 100%;
+    height: 100px;
+    margin: 5px;
+    font-size: 1.5em;
+    font-weight: 700;
+    background-color: var(--azul);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/*el penultimo botón ocupa el 33.3 el último boton ocupa el doble*/
+.ultimaFila button:nth-last-child(2) {
+    width: 33.3%;
+}
+
+.ultimaFila button:last-child {
+    width: 66.6%;
+}
+
+.error {
+    height: 20px;
+    color: red;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+/*si la pantalla es menor a 800 flex-direction: column*/
+@media (max-width: 800px) {
+    .checkTecnicoModal {
+        flex-direction: column-reverse;
+    }
+}
+
+.descripcionTareaTiempo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;  
+}
+
+.descripcionTareaTiempoTextarea{
+    width: calc(100% - 40px);
+    height: 60%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.botonGuardarDescripcionTareaTiempo{
+    padding: 20px;
+    cursor: pointer;
+    background-color: var(--azul);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+}

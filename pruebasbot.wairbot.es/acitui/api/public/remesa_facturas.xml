@@ -1,0 +1,2438 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="urn:iso:std:iso:20022:tech:xsd:pain.008.001.02">
+    <CstmrDrctDbtInitn>
+        <GrpHdr>
+            <MsgId>676e97fa531eb17501735301114</MsgId>
+            <CreDtTm>2024-12-27T12:05:14</CreDtTm>
+            <NbOfTxs>79</NbOfTxs>
+            <CtrlSum>3168.00</CtrlSum>
+            <InitgPty>
+                <Nm>ACITUI</Nm>
+                <Id>
+                    <PrvtId>
+                        <Othr>
+                            <Id>ES36000G36272003</Id>
+                        </Othr>
+                    </PrvtId>
+                </Id>
+            </InitgPty>
+        </GrpHdr>
+        <PmtInf>
+            <PmtInfId>676e97fa531ef26581735301114</PmtInfId>
+            <PmtMtd>DD</PmtMtd>
+            <BtchBookg>false</BtchBookg>
+            <PmtTpInf>
+                <SvcLvl>
+                    <Cd>SEPA</Cd>
+                </SvcLvl>
+                <LclInstrm>
+                    <Cd>CORE</Cd>
+                </LclInstrm>
+                <SeqTp>RCUR</SeqTp>
+            </PmtTpInf>
+            <ReqdColltnDt>2024-12-27</ReqdColltnDt>
+            <Cdtr>
+                <Nm>ASOCIACION DE COMERCIANTES DE TUI</Nm>
+                <PstlAdr>
+                    <Ctry>ES</Ctry>
+                    <AdrLine>. 36700 . </AdrLine>
+                    <AdrLine> </AdrLine>
+                </PstlAdr>
+            </Cdtr>
+            <CdtrAcct>
+                <Id>
+                    <IBAN>ES8000812276450001107514</IBAN>
+                </Id>
+            </CdtrAcct>
+            <CdtrAgt>
+                <FinInstnId>
+                    <BIC>BSABESBBXXX</BIC>
+                </FinInstnId>
+            </CdtrAgt>
+            <CdtrSchmeId>
+                <Id>
+                    <PrvtId>
+                        <Othr>
+                            <Id>ES36001G36272003</Id>
+                            <SchmeNm>
+                                <Prtry>SEPA</Prtry>
+                            </SchmeNm>
+                        </Othr>
+                    </PrvtId>
+                </Id>
+            </CdtrSchmeId>
+            <DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa52f3537081735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa52f4756511735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Alvaro Hermida S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Estrada Rebordans 21</AdrLine>
+            <AdrLine>Tui 36712</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5600497855172110003456</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa52ff693951735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa52ff825181735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Gonzalez 1968 S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Guillarei-Pontenova 84</AdrLine>
+            <AdrLine>Guillarei 36720</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7620805088033040001285</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5300269241735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5300389211735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Hortensia Rodríguez Martínez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>calle Foxo 7</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7600490081352110038998</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5300913631735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5300a48071735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Joyeria Jose Antonio R. Fco S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 3</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3920805054043040032605</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5301044951735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5301127961735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Luis Gil Besada</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Rosa Bahamonde 3</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3220805066783000133181</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5301966871735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5301a16891735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>CONCEPTO BY PERSA COCIÑAS SL</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Lugar de Regueiro 1</AdrLine>
+            <AdrLine>Tui 36711</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3200495636052616075089</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5301e81071735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5301f92761735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Manuel Bugallo Bugallo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Funchal 15</AdrLine>
+            <AdrLine>Tui 36712</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5820570046360101444615</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5302334821735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5302427051735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Estacion De Servicio De Tuy SL</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Calle Pontenova 82 B</AdrLine>
+            <AdrLine>Guillarei 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3120805088093040001607</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5302810891735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5302953681735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Librería Iris C.B.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Paseo Calvo Sotelo 25</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2600750732160600047243</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5302d10141735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5302e57131735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Martín Gónzalez Soutelo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 8 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5202388307730700517375</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5303436651735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5303518061735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Limiano S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 42</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5802388307750500007790</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5303837691735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5303915231735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Rita Álvarez Fernández</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Orense 8</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5220800066850000218553</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5303d64351735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5303e11001735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Balneario Caldelas S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Baños de Caldelas 116</AdrLine>
+            <AdrLine>Caldelas 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5500812276430001180327</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5304253101735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5304333721735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Alonso y Figueiroa</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Martin Padín 8</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES4900460256980000501515</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5304715231735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5304862521735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>SOCIEDAD ELECTRICISTA DE TUI DISTRIBUIDORA S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Coruña 20</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1720800513623040001517</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5304e76421735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5304f37291735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Joaquina Lourdes Estévez Piño</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Portugal 27</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES4500978966480600036468</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5305336591735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5305460711735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Optica y parafarmacia Cofil S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Rosa Bahamonde 9-11</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES0920805025323040034775</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5305896601735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5305968071735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Fracrisan S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Canonigo Valiño 11</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3900495636002016045236</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5305d92391735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5305e79041735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Benito Tartaglone Cal</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Colón 17</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7621004532282100003597</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5306147161735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5306245051735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mariposas S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Rosa Bahamonde 1</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2900720404370000206210</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5306885411735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5306936931735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Aseco-Tui S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Martín Padin 11 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5920800066850000223859</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5306d92511735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5306e39861735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mª Pilar Bouzada Riveiro</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Hermanos Maristas 11</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2420805066783000226348</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5307272181735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5307338041735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>XESTUI S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Hermanos Maristas 1-1º A</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES0900812276470001098412</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5307725521735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5307844711735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Julio Fdez e Hijos Panaderia S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Lugo 9</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6100460256980000010576</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5307c86921735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5307d60471735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mª Sonia Meira Carrilo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Colón 37 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES8600490081352390264446</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5308368651735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5308415331735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Binicula S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Augusto Gonzalez Besada 20 Bajo Izda.</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1921004046112200026571</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5308889971735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5308962661735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Larufre S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 108</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES8120805446783040114450</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5308d56831735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5308e73811735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Antonio José Moledo Bermúdez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Orense 2</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5520800446860000156964</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5309231251735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5309349921735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Monica Fernandez Dávila</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 10</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1720800066810000238197</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530bf33851735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530c091921735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Maintenant S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Augusto González Besada  17</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6020800137410040015630</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530c773651735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530c877731735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Rosa Mª Estévez Carrera</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Colón 5</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5400495636002016023917</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530cc68031735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530cd69481735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Automatismos Ind. Cerezo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Carretera Bayona 2</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5101821795450201587188</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530d177941735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530d257201735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Manuel Garrido Barbosa</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Paseo Calvo Sotelo 40</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES4920805066723000267029</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530d644031735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530d712481735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Pedro Telmo Rodríguez Iglesias</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Hermanos Maristas 12 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6821004532232200130296</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530db72861735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530dc31891735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Manuel Valenzuela Besada</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Foxo 5</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5602388322930703001295</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530e386231735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530e422051735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Esther Presa Fernández</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Mondoñedo 4 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES9600812276450001094519</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530e810501735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530e914471735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Verónica Martínez Miranda</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Hermanos Maristas 9</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2820805066733040024845</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530ed76311735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530ee13301735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Polisport Porriño S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Foxo 1</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES0821002304910200006615</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530f223601735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530f357001735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Clínica Veterinaria Tui S.C.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 1</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1100812276450001158517</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530fa86771735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530fb89851735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>ELECTOTUI SL</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Calle lugo  2 bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1820805066773040043259</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa530fe71231735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa530ff58411735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Libros Aquí Sociedad Limitada</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Augusto Gonzalez Besada 10 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7720805054073040058740</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5310394781735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5310451061735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mª del Mar  Lamas Novás</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 1</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES4600306111350001177272</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5310810301735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5310942971735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Alsisol. S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Lugar Gandara Guillarei s|n</AdrLine>
+            <AdrLine>Guillarei 36720</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES0402388307780600310980</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5310d83561735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5310e63011735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Jose Antonio Escudero Martínez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 13</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2200495636052695002229</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5311345691735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5311426971735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Isa y Yoli Tuy S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Plaza de Galizia 4</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1400812276430001082610</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5311869361735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5311947401735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mª del Carmen Treinta Alonso</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Portugal 44</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2820805446723000202526</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5312729781735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5312858801735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>PC Micro C.B.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Coruña 15</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7821004532262200025112</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5312c43381735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5312d83111735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Carmen Pereira Do Pazo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Colón 19</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES9821004532292200209293</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5313144841735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5313912531735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Perefira FerreiraS.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 4</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1420384020946000147268</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5314275821735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5314329331735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Km Peluquería C.B.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Martín Padin 11</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1600306110920298027273</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5314795691735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5314880151735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Creaciones Luminosas S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Foxo 20</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7300978966480600099402</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5314c64481735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5314d18731735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Fiadeiras S.C.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 2</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1721004532282200159196</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5315185841735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">120.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5315274941735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mª Jose Trigueiro Álvarez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Augusto Gonzalez Besada 4 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5900812214120001131815</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio anual 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5315682431735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5315737451735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Juan Carlos Fernandez Pereira</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 4</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3102388281420700023059</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5316530981735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5316695741735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Sra. Emilia Agencia de Comuicación S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 8 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES9000495636082316046496</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5316b54331735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5316c84131735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Alejandro López Rivas</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia Ponte internaciónal 14</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2120800535113040018267</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5317068841735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5317131111735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Marta Salgueiro Gonzalez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Colón 19B</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7300495636082316050779</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5317583891735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5317661381735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Gominolas Nitos</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Ordoñez 1</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5221004550870200065409</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5317a22481735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5317b32701735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Landmarkninversiones S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>tide 3</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7600490321082110345996</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5318146471735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5318250221735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>PIXERALIA S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>POLIGONO INDUSTRIAL CHAN DA PONTE  PARCELA 33</AdrLine>
+            <AdrLine>Salvaterra 36450</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3821006054130200125716</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5318671801735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5318750811735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Pinturas Damián Domínguez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Hermanos Maristas 1</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2300810492420001425352</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5318b43391735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5318c77721735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Marta Vaz Pazo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Seixal 32</AdrLine>
+            <AdrLine>Pazos de Reis 36715</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES8021004532282200260688</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5319043961735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5319123081735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Mila Estévez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Compostela 10 Bajo</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1321004532212200177653</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5319591621735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5319693901735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>SBS Decoración y Design S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Compostela 10</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6720800513633040029765</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa5319c53641735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa5319d18951735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>SAMUEL AMERICO PUMAR LUCENA</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 100 4º A</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6100730100550613813372</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531a040811735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531a159531735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Administración de Loterias Alén S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>C.C. Gadis-Hiper de Tui Regueiro Local 2</AdrLine>
+            <AdrLine>Areas 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES4120805030813040021848</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531a613061735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531a716341735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>INNOVACIÓN ECOLÓXICA BAIXO MIÑO S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Regueiro 31 B</AdrLine>
+            <AdrLine>Áreas 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES0220805064813040024148</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531ab28361735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531ac21431735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Beatriz Coello Pintos</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>C|Seijas 2</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES3600495636042793648989</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531af77121735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531b099361735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Bobypatricio S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 2</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5620800513633040029575</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531b610931735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">72.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531b764831735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Ana Mª Castaño Asorey</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Casal Aboy 13</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES7801821795410101505305</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio semestral 2º Semestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531bb83081735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">72.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531bc12051735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Miyiyiyo</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Travesia foxo 3, 1ºF Travesia foxo 3, 1ºF</AdrLine>
+            <AdrLine>Tuy 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES5300491177952891153033</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio semestral 2º Semestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531c043511735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531c171531735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>JOSEFINA GREGORES GONZALEZ</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>ORENSE 3 BAJO</AdrLine>
+            <AdrLine>TUI 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES0920800513683040022513</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531c552561735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531c682001735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Matilde y Rosana, S.L.</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Calle Compostela  4</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES8621004532272200168770</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531cc77701735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531cd92421735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>SINERXIA CB</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avd. Concordia 55 A BAJO</AdrLine>
+            <AdrLine>TUI  36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1120805066773040029223</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531d160421735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531d235401735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Kolbéh de Persa</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Avenida de Portugal, 22, bajo B Avenida de Portugal, 22, bajo B</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN></IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531d578441735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531d642261735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>Carlos González lopez</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Betanzos 3 Betanzos 3</AdrLine>
+            <AdrLine>Tui 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6600492478622114078141</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531d984661735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">120.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531da54791735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>CRISTINA RODRIGUEZ PEREZ</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>Calle Colón  22 3A</AdrLine>
+            <AdrLine>TUI 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES2501826621000201616766</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio anual 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531dc52871735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">36.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531dd80361735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>CLIMENT ENERGIAS SL</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>RUA CAMELIAS 89</AdrLine>
+            <AdrLine>VIGO 36211</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES6421002177600200600617</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio trimestral 4º Trimestre 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf><DrctDbtTxInf>
+    <PmtId>
+        <EndToEndId> 676e97fa531e123801735301114</EndToEndId>
+    </PmtId>
+    <InstdAmt Ccy="EUR">120.00</InstdAmt>
+    <DrctDbtTx>
+        <MndtRltdInf>
+            <MndtId>676e97fa531e290661735301114</MndtId>
+            <DtOfSgntr>2024-12-27</DtOfSgntr>
+        </MndtRltdInf>
+    </DrctDbtTx>
+    <DbtrAgt>
+        <FinInstnId />
+    </DbtrAgt>
+    <Dbtr>
+        <Nm>LIDIA MARIÑO MELO</Nm>
+        <PstlAdr>
+            <Ctry>ES</Ctry>
+            <AdrLine>CALLE O ROSAL 1</AdrLine>
+            <AdrLine>TUI 36700</AdrLine>
+        </PstlAdr>
+    </Dbtr>
+    <DbtrAcct>
+        <Id>
+            <IBAN>ES1220805066763040030321</IBAN>
+        </Id>
+    </DbtrAcct>
+    <RmtInf>
+        <Ustrd>Cuota Socio anual 2024</Ustrd>
+    </RmtInf>
+</DrctDbtTxInf>
+        </PmtInf>
+    </CstmrDrctDbtInitn>
+</Document>

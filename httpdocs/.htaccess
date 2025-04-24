@@ -1,0 +1,7 @@
+<IfModule mod_headers.c>
+    # HSTS (HTTP Strict Transport Security)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # CSP (Content Security Policy)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://trello.com https://wairbot.es; style-src 'self' 'unsafe-inline' https://trello.com https://wairbot.es"
+</IfModule>

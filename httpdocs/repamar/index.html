@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REPAMAR - MOTORES</title>
+    <meta name="description" content="Aquí va la descripción de la página">
+    <link rel="icon" href="./imgs/favicon.png">
+
+    <link rel="stylesheet" href="./css/globals.css">
+    <link rel="stylesheet" href="./css/grid.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/inputs.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/modal.css">
+
+    <script src="./js/query.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/menus.js"></script>
+    <script src="./js/templates/card.js"></script>
+    <script src="./js/templates/form.js"></script>
+    <script src="./js/templates/grid.js"></script>
+    <script src="./js/templates/modal.js"></script>
+
+    <script src="./js/users/administrador/agentes.js"></script>
+    <script src="./js/users/administrador/clientes.js"></script>
+    <script src="./js/users/administrador/tecnicos.js"></script>
+    <script src="./js/users/administrador/stock.js"></script>
+    <script src="./js/users/administrador/vendidos.js"></script>
+    <script src="./js/users/administrador/solicitudes.js"></script>
+    <script src="./js/users/administrador/publicidad.js"></script>
+
+    <script src="./js/users/agente/clientes.js"></script>
+    <script src="./js/users/agente/tecnicos.js"></script>
+    <script src="./js/users/agente/stock.js"></script>
+    <script src="./js/users/agente/vendidos.js"></script>
+
+    <script src="./js/users/cliente/motores.js"></script>
+    <script src="./js/users/cliente/notificaciones.js"></script>
+    <script src="./js/users/cliente/publicidad.js"></script>
+
+    <script src="./js/users/tecnico/partes.js"></script>
+</head>
+
+<body>
+    <div class="nav3Container" id="nav3Container">
+        <div class="nav3" id="nav3">
+            <div class="nav3Header">
+                <div class="titulonav3Header">Menú</div>
+                <div class="cerrarMenu" id="cerrarMenu" onclick="cerrarMenu()">&times;</div>
+            </div>
+            <div class="nav3_menu" id="nav3_menu"></div>
+        </div>
+        <div class="sobrante" onclick="cerrarMenu()"></div>
+    </div>
+
+    <style>
+        .carruselContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 95%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+
+        .carousel__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 40px;
+            background-color: #f1f1f1;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .carousel__button:hover {
+            background-color: #ddd;
+        }
+
+        .carousel__button--left {
+            margin-right: 10px;
+        }
+
+        .carousel__button--right {
+            margin-left: 10px;
+        }
+
+        .carousel__track-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
+        }
+
+        .carousel__track {
+            display: flex;
+            scroll-snap-type: x mandatory;
+            overflow: hidden;
+        }
+
+        .carruselProducto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .carruselImagen {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 150px;
+        }
+
+        .carruselImagen img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .carruselTexto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: calc(100% - 20px);
+            padding: 10px;
+            background-color: #f1f1f1;
+        }
+
+        .carruselNombre {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .carruselPrecio {
+            font-size: 16px;
+            color: #0a4fff;
+        }
+
+        .carruselTitle {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+    </style>
+    <div class="carruselAndTitleContainer"></div>
+
+
+    <main>
+        <section class="login" id="login"></section>
+        <section class="gridContainer administrador" id="administrador"></section>
+        <section class="gridContainer agente" id="agente"></section>
+        <section class="gridContainer tecnico" id="tecnico"></section>
+        <section class="gridContainer cliente" id="cliente"></section>
+    </main>
+
+    <script>
+        const header1 = `
+            <header class="headerGrande" id="headerGrande">
+                <div class="nav1Container" id="nav1Container">
+                    <div class="nav1" id="nav1">
+                        <div class="logo" id="logo"></div>
+                        <div class="buscador">
+                            <div class="buscador_input" id="buscador_input">
+                                <input type="text" name="buscador" id="buscador" placeholder="Buscar..." oninput="resetBusqueda()">
+                                <button id="resetButton" onclick="resetBusqueda(true)">X</button>
+                                <div class="buscador_lupa" id="buscador_lupa" onclick="aplicarBusqueda()">
+                                    <img src="./imgs/lupa.svg" alt="Buscar">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usuario" id="usuario">
+                            <div class="usuario_nombre" id="usuario_nombre"></div>
+                            <div class="usuario_foto" id="usuario_foto"></div>
+                            <div class="usuario_salir" id="usuario_salir" onclick="cerrarSesion()">
+                                <img src="./imgs/exit.svg" alt="Salir">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav2Container" id="nav2Container">
+                <div class="nav2" id="nav2">
+                    <div class="hamburguesa1" id="hamburguesa1" onclick="hamburguesa()">
+                        <img src="./imgs/hamburguesa1.svg" alt="Menú">
+                    </div>
+                    <div class="nav2_menu" id="nav2_menu"></div>
+                </div>
+            </div>
+        `;
+        const header2 = `
+            <header class="headerSmall" id="headerSmall">
+                <div class="nav1Container" id="nav1Container">
+                    <div class="nav1" id="nav1">
+                        <div class="logo" id="logo"></div>
+                    </div>
+                </div>
+            </header>
+            <div class="nav2ContainerSmall" id="nav2ContainerSmall">
+                <div class="nav2" id="nav2">
+                    <div class="hamburguesa1" id="hamburguesa1" onclick="hamburguesa()">
+                        <img src="./imgs/hamburguesa2.svg" alt="Menú">
+                    </div>
+                    <div class="buscador">
+                        <div class="buscador_input" id="buscador_input">
+                            <input type="text" name="buscador" id="buscador" placeholder="Buscar..." oninput="resetBusqueda()">
+                            <button id="resetButton" onclick="resetBusqueda(true)">X</button>
+                            <div class="buscador_lupa" id="buscador_lupa" onclick="aplicarBusqueda()">
+                                <img src="./imgs/lupa.svg" alt="Buscar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="usuario_salir" id="usuario_salir" onclick="cerrarSesion()">
+                        <img src="./imgs/exit.svg" alt="Salir">
+                    </div>
+                </div>
+            </div>
+        `;
+
+        //si la pantalla es menor a 800px carga el header2 al principio del body y si no carga el header1
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const handleResize = (e) => {
+                // Elimina elementos existentes para evitar duplicados
+                ['headerSmall', 'nav2ContainerSmall', 'headerGrande', 'nav2Container'].forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.remove();
+                    }
+                });
+
+                // Añade el contenido basado en el tamaño de la pantalla
+                document.body.innerHTML = e.matches ? header2 + document.body.innerHTML : header1 + document.body.innerHTML;
+
+                // Carga el menú basado en el rol del usuario
+                const usuario = JSON.parse(localStorage.getItem('usuario'));
+                let menuData = [];
+                switch (usuario.rol) {
+                    case 'ADMINISTRADOR':
+                        menuData = [
+                            { nombre: 'AGENTES', get: 'getAgentes' },
+                            { nombre: 'TÉCNICOS', get: 'getTecnicos' },
+                            { nombre: 'CLIENTES', get: 'getClientes' },
+                            { nombre: 'MOTORES EN STOCK', get: 'getStock' },
+                            { nombre: 'MOTORES VENDIDOS', get: 'getVendidos' },
+                            { nombre: 'SOLICITUDES', get: 'getSolicitudes' },
+                            { nombre: 'PUBLICIDAD', get: 'getPublicidad' },
+                        ];
+                        break;
+                    case 'AGENTE':
+                        menuData = [
+                            { nombre: 'TÉCNICOS', get: 'getTecnicosAgente' },
+                            { nombre: 'CLIENTES', get: 'getClientesAgente' },
+                            { nombre: 'MOTORES EN STOCK', get: 'getStockAgente' },
+                            { nombre: 'MOTORES VENDIDOS', get: 'getVendidosAgente' },
+                        ];
+                        break;
+                    case 'TECNICO':
+                        menuData = [{ nombre: 'PARTES ASIGNADOS', get: 'getPartesTecnico' }];
+                        break;
+                    case 'CLIENTE':
+                        menuData = [
+                            { nombre: 'MOTORES', get: 'getMotoresCliente' },
+                            { nombre: 'NOTIFICACIONES', get: 'getVendidosCliente' },
+                        ];
+                        break;
+                }
+                generarMenu(menuData);
+            };
+
+            // Inicializa el listener con matchMedia
+            const mediaQuery = window.matchMedia('(max-width: 800px)');
+            mediaQuery.addListener(handleResize);
+            handleResize(mediaQuery); // Llama a la función inicialmente para establecer el estado
+
+            // Maneja la búsqueda al pulsar enter
+            document.getElementById('buscador').addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    document.getElementById('buscador_lupa').click();
+                }
+            });
+        });
+
+        function aplicarBusqueda() {
+            let location = localStorage.getItem('location');
+            let usuario = JSON.parse(localStorage.getItem('usuario'));
+            let rol = usuario.rol;
+
+            //agentes, tecnicos, clientes, stock, vendidos, solicitudes, publicidad
+            if (location == 'agentes') {
+                getAgentes();
+            } else if (location == 'tecnicos') {
+                if (rol === 'ADMINISTRADOR') {
+                    getTecnicos();
+                } else if (rol === 'AGENTE') {
+                    getTecnicosAgente();
+                }
+            } else if (location == 'clientes') {
+                if (rol === 'ADMINISTRADOR') {
+                    getClientes();
+                } else if (rol === 'AGENTE') {
+                    console.log('getClientesAgente');
+                    getClientesAgente();
+                }
+            } else if (location == 'stock') {
+                //getStock();
+                if (rol === 'ADMINISTRADOR') {
+                    getStock();
+                } else if (rol === 'AGENTE') {
+                    getStockAgente();
+                }
+            } else if (location == 'vendidos') {
+                //getVendidos();
+                if (rol === 'ADMINISTRADOR') {
+                    getVendidos();
+                } else if (rol === 'AGENTE') {
+                    getVendidosAgente();
+                } else if (rol === 'CLIENTE') {
+                    getVendidosCliente();
+                }
+            }
+        }
+
+        function resetBusqueda(forzarReset = false) {
+            console.log('resetBusqueda');
+            let buscador = document.getElementById('buscador');
+            let location = localStorage.getItem('location');
+            let usuario = JSON.parse(localStorage.getItem('usuario'));
+            let rol = usuario.rol;
+
+            if (buscador.value != '' && !forzarReset) {
+                return;
+            }
+
+            buscador.value = '';
+            buscador.focus();
+
+            //agentes, tecnicos, clientes, stock, vendidos, solicitudes, publicidad
+            if (location == 'agentes') {
+                getAgentes();
+            } else if (location == 'tecnicos') {
+                if (rol === 'ADMINISTRADOR') {
+                    getTecnicos();
+                } else if (rol === 'AGENTE') {
+                    getTecnicosAgente();
+                }
+            } else if (location == 'clientes') {
+                if (rol === 'ADMINISTRADOR') {
+                    getClientes();
+                } else if (rol === 'AGENTE') {
+                    console.log('getClientesAgente');
+                    getClientesAgente();
+                }
+            } else if (location == 'stock') {
+                //getStock();
+                if (rol === 'ADMINISTRADOR') {
+                    getStock();
+                } else if (rol === 'AGENTE') {
+                    getStockAgente();
+                }
+            } else if (location == 'vendidos') {
+                //getVendidos();
+                if (rol === 'ADMINISTRADOR') {
+                    getVendidos();
+                } else if (rol === 'AGENTE') {
+                    getVendidosAgente();
+                } else if (rol === 'CLIENTE') {
+                    getVendidosCliente();
+                }
+            }
+        }
+
+        function cerrarSesion() {
+            localStorage.clear();
+            location.reload();
+        }
+    </script>
+    <script src="./js/onLoad.js"></script>
+    <script>
+        let usuario = JSON.parse(localStorage.getItem('usuario'));
+        if (usuario.rol === 'CLIENTE') {
+            let publicidad = JSON.parse(localStorage.getItem('publicidad'));
+
+            let carruselAndTitleContainer = document.querySelector('.carruselAndTitleContainer');
+
+            let itemsCarrusel = '';
+            publicidad.forEach((item) => {
+                itemsCarrusel += `
+                    <div class="carruselProducto">
+                        <div class="carruselImagen">
+                            <img src="${item.imagen}" alt="${item.nombre}">
+                        </div>
+                        <div class="carruselTexto">
+                            <div class="carruselNombre">${item.nombre}</div>
+                            <div class="carruselPrecio">${item.precio}</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            carruselAndTitleContainer.innerHTML = `
+                <h2 class="carruselTitle">Ofertas</h2>
+                <div class="carruselContainer" id="carruselContainer">
+                    <div class="carousel">
+                        <div class="carousel__button carousel__button--left" onclick="retrocederCarrusel()">&lt;</div>
+                        <div class="carousel__track-container">
+                            <div class="carousel__track">
+                                ${itemsCarrusel}
+                            </div>
+                        </div>
+                        <div class="carousel__button carousel__button--right" onclick="avanzarCarrusel()">&gt;</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function avanzarCarrusel() {
+            let track = document.querySelector('.carousel__track');
+            let trackWidth = track.offsetWidth;
+            let trackScroll = track.scrollLeft;
+            let trackScrollMax = track.scrollWidth - trackWidth;
+            let trackScrollNew = trackScroll + 160;
+
+            if (trackScrollNew > trackScrollMax) {
+                trackScrollNew = trackScrollMax;
+            }
+
+            track.scrollTo({
+                left: trackScrollNew,
+                behavior: 'smooth'
+            });
+
+        }
+
+        function retrocederCarrusel() {
+            let track = document.querySelector('.carousel__track');
+            let trackWidth = track.offsetWidth;
+            let trackScroll = track.scrollLeft;
+            let trackScrollNew = trackScroll - 160;
+
+            if (trackScrollNew < 0) {
+                trackScrollNew = 0;
+            }
+
+            track.scrollTo({
+                left: trackScrollNew,
+                behavior: 'smooth'
+            });
+        }
+
+    </script>
+</body>
+
+</html>

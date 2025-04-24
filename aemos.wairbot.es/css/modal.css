@@ -1,0 +1,133 @@
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContenido {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 5px;
+    max-height: 90dvh;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modalTitulo {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.cerrarModal {
+    font-size: 1.5em;
+    scale: 1.2;
+    cursor: pointer;
+}
+
+.modalBodyContenido {
+    height: 70dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    margin-top: 20px;
+}
+
+.modalBoton {
+    padding: 10px 20px;
+    border: 1px solid #888;
+    cursor: pointer;
+}
+
+.modal .headerGrid {
+    width: 100% !important;
+}
+
+.modal .grid{
+    width: 100% !important;
+}
+
+.modalAvisoContainer {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+}
+
+.modalAviso {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.modalAvisoHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modalAvisoTitulo {
+    font-size: 1.2em;
+}
+
+.modalAvisoCerrar {
+    scale: 1.5;
+    cursor: pointer;
+}
+
+.modalAvisoMensaje {
+    width: calc(100% - 20px);
+    text-align: center;
+    padding: 10px;
+}
+
+.modalAvisoFooter {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modalAvisoBoton {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
