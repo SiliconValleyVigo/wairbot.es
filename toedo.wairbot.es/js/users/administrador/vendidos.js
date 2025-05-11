@@ -727,6 +727,14 @@ async function imprimirTicket() {
   }
 
   let tareasHtml = "";
+  // Utility function to escape HTML special characters
+  function escapeHTML(str) {
+    return str.replace(/[&<>"']/g, function (char) {
+      const escapeChars = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+      return escapeChars[char];
+    });
+  }
+
   for (let tarea of tareas){
     //si tarea tipo comienza por tres caracteres numéricos borra los tres primeros caracteres y el espacio
     if (tarea.tipo.substring(0, 3).match(/\d/g)) {
@@ -750,10 +758,10 @@ async function imprimirTicket() {
 
     tareasHtml += `
       <div style="display: flex; justify-content: space-between;">
-        <div>${tarea.tipo}</div>
-        <div>${tarea.descripcion}</div>
-        <div>${tarea.referencia}</div>
-        <div>${tarea.coste}</div>
+        <div>${escapeHTML(tarea.tipo)}</div>
+        <div>${escapeHTML(tarea.descripcion)}</div>
+        <div>${escapeHTML(tarea.referencia)}</div>
+        <div>${escapeHTML(tarea.coste)}</div>
       </div>
     `;
   }
