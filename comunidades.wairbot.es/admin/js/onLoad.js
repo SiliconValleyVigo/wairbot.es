@@ -16,11 +16,12 @@ function mostrarSection(section) {
     document.getElementById(section).style.display = 'flex';
 
     let thisUrl = window.location.href;
+    let sanitizedUrl = encodeURIComponent(thisUrl);
     
     if(section === 'login'){
         let htmlLogin = `
             <form>
-                <img src="${thisUrl}/imgs/logo.svg" alt="Logo" class="logo">
+                <img src="${sanitizedUrl}/imgs/logo.svg" alt="Logo" class="logo">
                 <h2>LOGIN</h2>
                 <div class="inputGroup">
                     <label>Usuario o email</label>
