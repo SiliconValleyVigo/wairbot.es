@@ -15,7 +15,7 @@ function mostrarSection(section) {
 
     document.getElementById(section).style.display = 'flex';
 
-    let thisUrl = window.location.href;
+    let thisUrl = encodeURIComponent(window.location.href);
     
     if(section === 'login'){
         let htmlLogin = `
