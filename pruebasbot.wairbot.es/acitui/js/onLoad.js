@@ -1,6 +1,14 @@
 //comprobar si hay token en localstorage
 let token = localStorage.getItem('token');
 
+function encodeHTML(str) {
+    return str.replace(/&/g, "&amp;")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+              .replace(/"/g, "&quot;")
+              .replace(/'/g, "&#39;");
+}
+
 if (token === null || token === undefined || token === 'undefined' || token === '' || token === 'null') {
     mostrarSection('login');
 } else {
@@ -16,11 +24,12 @@ function mostrarSection(section) {
     document.getElementById(section).style.display = 'flex';
 
     let thisUrl = window.location.href;
+    let sanitizedUrl = encodeHTML(thisUrl);
 
     if (section === 'login') {
         let htmlLogin = `
             <form id="formLogin" style="display: flex;">
-                <img src="${thisUrl}/imgs/logo.svg" alt="Logo" class="logo">
+                <img src="${sanitizedUrl}/imgs/logo.svg" alt="Logo" class="logo">
                 <h2>LOGIN</h2>
                 <div class="inputGroup">
                     <label>Usuario o email</label>
