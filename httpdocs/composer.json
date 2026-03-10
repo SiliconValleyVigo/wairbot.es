@@ -1,6 +1,6 @@
 {
     "require": {
-        "firebase/php-jwt": "^6.2",
+        "firebase/php-jwt": "^7.0",
         "giggsey/libphonenumber-for-php": "8.13"
     }
 }
